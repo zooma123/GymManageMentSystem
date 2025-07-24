@@ -10,6 +10,13 @@ class Subscription extends Model
 protected $fillable = ['type' , 'price'];
 
 
+public function Users(){
+
+return $this->belongsToMany(User::class , 'users_subscriptions');
+
+}
+
+
 
 
 }
