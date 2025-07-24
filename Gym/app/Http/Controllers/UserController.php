@@ -7,6 +7,7 @@ use App\Http\Requests\AuthRequest;
 use Illuminate\Http\Request;
 use App\Services\AuthService;
 use App\Services\UserService;
+use Exception;
 
 class UserController extends Controller
 {
@@ -21,12 +22,22 @@ public function __construct(AuthService $authservice , UserService $userservice)
 
 
 public function Register (AuthRequest $request){
+try{
+$result = $this->authservice->Register($request);
+return response()->json([
+"message" => $result
+]);
 
+}catch(Exception $err){
 
-
-
+return $err->getMessage();
 
 }
+}
+
+
+
+
 
 
 

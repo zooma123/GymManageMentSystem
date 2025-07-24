@@ -2,6 +2,10 @@
 
 namespace App\Services;
 
+use App\Http\Requests\AuthRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 class AuthService
 {
     /**
@@ -12,11 +16,22 @@ class AuthService
         //
     }
 
+public Function Register(AuthRequest $request){
+
+$data = $request->validated();
+
+$data['password'] = Hash::make($data['password']);
+
+    $user = User::create($data);
+
+return 'success';
+
+
+}
 
 
 
 
-    
 
 
 }
