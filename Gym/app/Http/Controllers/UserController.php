@@ -21,6 +21,7 @@ public function __construct(AuthService $authservice , UserService $userservice)
 }
 
 
+
 public function Register (AuthRequest $request){
 try{
 $result = $this->authservice->Register($request);
@@ -36,7 +37,26 @@ return $err->getMessage();
 }
 
 
+public function Login(Request $request)
+{
+try{
+    $result = $this->authservice->Login($request);
 
+    return response()->json([
+$result
+
+    ]);
+}catch(Exception $ex){
+
+return $ex->getMessage();
+
+}
+
+
+
+
+
+}
 
 
 
