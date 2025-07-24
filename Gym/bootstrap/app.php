@@ -13,15 +13,21 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-          
+        
+    
+            $middleware->alias([
+              'RoleMiddleware' => RoleMiddleware::class
+            ]);
+        
+
         $middleware->validateCsrfTokens(except: [
             '/auth/register',
-            '/auth/login'
-            
-       
-       
+            '/auth/login',
+            '/user/CreateUser',
+            '/user/DeleteUser/*'
         ]);
-        $middleware->append(RoleMiddleware::class);
+ 
+
 
 
 

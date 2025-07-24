@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AuthRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Services\AuthService;
 use App\Services\UserService;
@@ -51,12 +52,49 @@ $result
 return $ex->getMessage();
 
 }
+}
 
+public Function index(){
 
+$users =  User::all();
 
+return response()->json([
+$users
+]);
+
+}
+
+public function CreateUser(AuthRequest $request){
+try{
+$result = $this->userservice->CreateUser($request);
+
+return response()->json([
+    "message" => $result
+    ]);
+    
+    }catch(Exception $err){
+    
+    return $err->getMessage();
+    
+    }
+
+}
+
+public function DeleteUser($userid){
+$result = $this->userservice->DeleteUser($userid);
+
+return response()->json([
+$result
+
+]);
 
 
 }
+
+
+
+
+
 
 
 
