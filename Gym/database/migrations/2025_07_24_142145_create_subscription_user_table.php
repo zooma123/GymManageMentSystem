@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users_subscriptions', function (Blueprint $table) {
+        Schema::create('subscription_user', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('subscribtion_id')->constrained('subscritions');
+            $table->foreignId('subscription_id')->constrained('subscriptions');
             $table->decimal('price', 8, 2);
             $table->integer('count'); 
             $table->date('start_date');
             $table->date('end_date');
+            $table->boolean('isActive');
             $table->timestamps();
         });
     }

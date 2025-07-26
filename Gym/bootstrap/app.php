@@ -24,7 +24,10 @@ return Application::configure(basePath: dirname(__DIR__))
             '/auth/register',
             '/auth/login',
             '/user/CreateUser',
-            '/user/DeleteUser/*'
+            '/user/DeleteUser/*',
+            '/CreateSubsCription',
+            '/MakeUserSubscription',
+              'UserSubscription/*'
         ]);
  
 
