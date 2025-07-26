@@ -87,9 +87,8 @@ $data = $user->Subscriptions()->wherePivot('isActive', true)->first();
 
 return $data;
 
-
-    }
-
-
-  
+    }  
 }
+
+
+

@@ -52,7 +52,7 @@ class User extends Authenticatable
 
     public function Subscriptions(){
 
-        return $this->belongsToMany(Subscription::class , 'subscription_user')->withPivot('price', 'count', 'start_date', 'end_date')
+        return $this->belongsToMany(Subscription::class , 'subscription_user')->withPivot('price', 'count', 'start_date', 'end_date' ,'isActive' )
         ->withTimestamps();
 ;
         

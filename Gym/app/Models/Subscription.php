@@ -12,7 +12,7 @@ protected $fillable = ['type' , 'price'];
 
 public function Users(){
 
-return $this->belongsToMany(User::class , 'subscription_user')->withPivot('price', 'count', 'start_date', 'end_date')
+return $this->belongsToMany(User::class , 'subscription_user')->withPivot('price', 'count', 'start_date' ,'end_date'  ,'isActive'  )
 ->withTimestamps();
 ;
 
