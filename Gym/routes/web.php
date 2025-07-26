@@ -13,4 +13,4 @@ Route::get('/', function () {
 Route::post('/auth/register', [UserController::class , 'Register']);
 Route::post('/auth/login', [UserController::class , 'Login']);
 Route::post('/user/CreateUser', [UserController::class , 'CreateUser'])->middleware('auth:sanctum')->middleware('RoleMiddleware');
-Route::post('/user/DeleteUser/{userid}', [UserController::class , 'DeleteUser'])->middleware('auth:sanctum')->middleware('RoleMiddleware');
+Route::delete('/user/DeleteUser/{userid}', [UserController::class , 'DeleteUser'])->middleware('auth:sanctum')->middleware('RoleMiddleware');

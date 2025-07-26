@@ -33,6 +33,7 @@ class UserService
     public function DeleteUser($userid){
 
 $user = User::findOrfail($userid);
+$user->delete();
 
 return "success";
 
