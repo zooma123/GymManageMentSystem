@@ -32,7 +32,8 @@ return Application::configure(basePath: dirname(__DIR__))
             '/MakeUserSubscription',
               'UserSubscription/*',
               'CheckForEntry/*',
-              'barcode/*'
+              'barcode/*',
+              'deatcivateSubs/*'
         ]);
  
 

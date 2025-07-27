@@ -30,3 +30,4 @@ Route::post('/CheckForEntry/{id}' , [SubscribtionController::class , 'CheckForEn
 
 
 Route::get('/barcode/{id}', [SubscribtionController::class, 'showbarcode'])->name('barcode.show');
+Route::post('/deatcivateSubs/{id}' , [SubscribtionController::class , 'deatcivateSubs'])->middleware('auth:sanctum')->middleware('RoleMiddleware');

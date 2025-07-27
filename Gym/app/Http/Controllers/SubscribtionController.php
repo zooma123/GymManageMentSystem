@@ -82,6 +82,16 @@ return $result;
 
 
 
+public function deatcivateSubs($id){
+
+$result = $this->subsservice->deatcivateSubs($id);
+
+return response()->json([
+
+$result 
+]);
+
+}
 
 
 

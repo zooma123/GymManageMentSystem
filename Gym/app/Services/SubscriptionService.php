@@ -133,5 +133,30 @@ public function showbarcode($id){
 
 
 
+public function deatcivateSubs($id){
+
+$user = User::FindOrfail($id);
+
+$subscription = $user->subscriptions()->wherePivot('isActive', true)->first();
+
+// Check if there's an active subscription
+if ($subscription) {
+    // Deactivate it by updating the pivot table
+    $user->Subscriptions()->updateExistingPivot($subscription->id, [
+        'isActive' => false
+    ]);
+
+    return 'success';
+}
+
+return 'no active subscription found';
+
+
+
+
+}
+
+
+
 
 }
