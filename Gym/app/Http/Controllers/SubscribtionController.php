@@ -71,6 +71,15 @@ $result
 
 }
 
+public function showbarcode($id){
+
+$result = $this->subsservice->showbarcode($id);
+
+
+return $result;
+
+}
+
 
 
 

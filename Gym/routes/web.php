@@ -27,3 +27,6 @@ Route::get('/UserSubscription/{id}' , [SubscribtionController::class , 'UserSubs
 
 
 Route::post('/CheckForEntry/{id}' , [SubscribtionController::class , 'CheckForEntry']);
+
+
+Route::get('/barcode/{id}', [SubscribtionController::class, 'showbarcode'])->name('barcode.show');

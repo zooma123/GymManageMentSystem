@@ -6,6 +6,7 @@ use App\Models\Subscription;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Milon\Barcode\DNS2D;
 
 class SubscriptionService
 {
@@ -111,8 +112,17 @@ return false ;
 }
     
 
+public function showbarcode($id){
+    
+
+    $user = User::findOrFail($id);
+    $barcodeGenerator = new \Milon\Barcode\DNS2D();
+
+    // Cast to string to prevent type issues
+    $barcode = $barcodeGenerator->getBarcodeHTML((string) $user->id, 'QRCODE');
 
 
+    return view('barcode-view', compact('barcode', 'user'));
 
 
 
@@ -124,3 +134,4 @@ return false ;
 
 
 
+}
