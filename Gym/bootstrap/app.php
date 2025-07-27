@@ -30,7 +30,8 @@ return Application::configure(basePath: dirname(__DIR__))
             '/user/DeleteUser/*',
             '/CreateSubsCription',
             '/MakeUserSubscription',
-              'UserSubscription/*'
+              'UserSubscription/*',
+              'CheckForEntry/*'
         ]);
  
 

@@ -88,7 +88,39 @@ $data = $user->Subscriptions()->wherePivot('isActive', true)->first();
 return $data;
 
     }  
+
+
+
+    public function CheckForEntry($id){
+
+$user = User::findOrfail($id);
+
+$subscribition = $user->Subscriptions()->wherePivot('isActive', true)
+->wherePivot('start_date', '<=', now())
+->wherePivot('end_date', '>=', now())
+->first();
+    
+if($subscribition){
+    return 'true';
+}    else {
+return false ;
+
 }
+
+
+}
+    
+
+
+
+
+
+
+
+
+}
+
+
 
 
 

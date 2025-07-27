@@ -26,3 +26,4 @@ Route::get('/UserSubscription/{id}' , [SubscribtionController::class , 'UserSubs
 
 
 
+Route::post('/CheckForEntry/{id}' , [SubscribtionController::class , 'CheckForEntry']);

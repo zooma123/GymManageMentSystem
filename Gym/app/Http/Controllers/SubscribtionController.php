@@ -61,4 +61,26 @@ $result
 ]);
 }
 
+public function CheckForEntry($id){
+
+$result = $this->subsservice->CheckForEntry($id);
+return response()->json([
+$result 
+
+]);
+
 }
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
